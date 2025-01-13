@@ -1,3 +1,6 @@
+#!/bin/bash
+
+# Create Maintenance Configuration
 az maintenance configuration create \
   --resource-group myMaintenanceRG \
   --resource-name inGuestPatchMaintenanceConfig \
@@ -12,7 +15,7 @@ az maintenance configuration create \
   --reboot-setting "IfRequired" \
   --extension-properties InGuestPatchMode="User"
 
-
+# Assign Maintenance Configuration to VM
 az maintenance assignment create \
   --resource-group myMaintenanceRG \
   --location eastus \
